@@ -1,9 +1,11 @@
-package com.example.rickandmortyapp.ui
+package com.example.rickandmortyapp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.rickandmortyapp.screens.CharacterDetailScreen
+import com.example.rickandmortyapp.screens.CharacterListScreen
 import com.example.rickandmortyapp.viewmodel.CharacterViewModel
 
 @Composable

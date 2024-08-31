@@ -1,4 +1,4 @@
-package com.example.rickandmortyapp.ui
+package com.example.rickandmortyapp.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -48,7 +48,7 @@ fun CharacterDetailScreen(viewModel: CharacterViewModel, characterId: Int) {
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
                         text = "Name: ${it.name}",
-                        style = MaterialTheme.typography.headlineMedium,
+                        style = MaterialTheme.typography.headlineSmall,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )

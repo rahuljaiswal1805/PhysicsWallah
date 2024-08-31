@@ -1,33 +1,24 @@
-package com.example.rickandmortyapp.ui
+package com.example.rickandmortyapp.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.example.rickandmortyapp.models.Character
-import com.example.rickandmortyapp.viewmodel.CharacterViewModel
-
-@Composable
-fun CharacterListScreen(viewModel: CharacterViewModel, navController: NavController) {
-    val characters by viewModel.characters.collectAsState()
-
-    LazyColumn {
-        items(characters) { character ->
-            CharacterListItem(character) {
-                navController.navigate("character/${character.id}")
-            }
-        }
-    }
-}
 
 @Composable
 fun CharacterListItem(character: Character, onClick: () -> Unit) {
@@ -58,10 +49,4 @@ fun CharacterListItem(character: Character, onClick: () -> Unit) {
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun CharacterListPreview() {
-
 }
