@@ -2,11 +2,12 @@ package com.example.rickandmortyapp.repository
 
 import com.example.rickandmortyapp.models.Character
 import com.example.rickandmortyapp.models.CharacterResponse
+import com.example.rickandmortyapp.network.ApiService
 import com.example.rickandmortyapp.network.RetrofitInstance
 
 
-class CharacterRepository {
-    private val api = RetrofitInstance.api
+class CharacterRepository(private val api : ApiService ) {
+//    private val api = RetrofitInstance.api
 
     suspend fun getCharacters(): CharacterResponse = api.getCharacters()
 

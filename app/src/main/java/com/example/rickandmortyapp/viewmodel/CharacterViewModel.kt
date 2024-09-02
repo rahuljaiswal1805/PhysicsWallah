@@ -11,8 +11,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class CharacterViewModel : ViewModel() {
-    private val repository = CharacterRepository()
+class CharacterViewModel(private val repository: CharacterRepository) : ViewModel() {
+//    private val repository = CharacterRepository()
 
     private val _characters = MutableStateFlow<List<Character>>(emptyList())
     val characters: StateFlow<List<Character>> get() = _characters
